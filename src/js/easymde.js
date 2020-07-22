@@ -18,6 +18,7 @@ var marked = require('marked/lib/marked');
 var isMac = /Mac/.test(navigator.platform);
 var anchorToExternalRegex = new RegExp(/(<a.*?https?:\/\/.*?[^a]>)+?/g);
 
+// TODO: Update bindings for your new methods
 // Mapping of actions that can be bound to keyboard shortcuts or toolbar buttons
 var bindings = {
     'toggleBold': toggleBold,
@@ -44,6 +45,7 @@ var bindings = {
     'toggleFullScreen': toggleFullScreen,
 };
 
+// TODO: Update shortcuts for your new methods
 var shortcuts = {
     'toggleBold': 'Cmd-B',
     'toggleItalic': 'Cmd-I',
@@ -397,12 +399,15 @@ function toggleStrikethrough(editor) {
     _toggleBlock(editor, 'strikethrough', '~~');
 }
 
+// TODO: Add your action for toggling highlighted
+
 /**
  * Action for toggling code block.
  */
 function toggleCodeBlock(editor) {
     var fenceCharsToInsert = editor.options.blockStyles.code;
 
+    // TODO: Could be a problem when you create your function for "higlighted" text
     function fencing_line(line) {
         /* return true, if this is a ``` or ~~~ line */
         if (typeof line !== 'object') {
@@ -731,6 +736,7 @@ function toggleHeading3(editor) {
     _toggleHeading(cm, undefined, 3);
 }
 
+// TODO: Add function for toggling heading size 4, 5, 6
 
 /**
  * Action for toggling ul.
@@ -1204,6 +1210,7 @@ function _toggleLine(cm, name) {
     cm.focus();
 }
 
+// TODO: add "highlighted" type and rest functionality
 function _toggleBlock(editor, type, start_chars, end_chars) {
     if (/editor-preview-active/.test(editor.codemirror.getWrapperElement().lastChild.className))
         return;
@@ -1281,6 +1288,7 @@ function _cleanBlock(cm) {
     var endPoint = cm.getCursor('end');
     var text;
 
+    // TODO: add ` to regexp???
     for (var line = startPoint.line; line <= endPoint.line; line++) {
         text = cm.getLine(line);
         text = text.replace(/^[ ]*([# ]+|\*|-|[> ]+|[0-9]+(.|\)))[ ]*/, '');
@@ -1359,6 +1367,7 @@ function wordCount(data) {
     return count;
 }
 
+// TODO: Add toolbar options: heading-4, heading-5, heading-6, highlighted
 var toolbarBuiltInButtons = {
     'bold': {
         name: 'bold',
@@ -1569,6 +1578,7 @@ var timeFormat = {
     },
 };
 
+// TODO: Highlighted
 var blockStyles = {
     'bold': '**',
     'code': '```',
@@ -2615,7 +2625,7 @@ EasyMDE.prototype.value = function (val) {
     }
 };
 
-
+// TODO: Update bindings for new methods
 /**
  * Bind static methods for exports.
  */
@@ -2642,6 +2652,7 @@ EasyMDE.togglePreview = togglePreview;
 EasyMDE.toggleSideBySide = toggleSideBySide;
 EasyMDE.toggleFullScreen = toggleFullScreen;
 
+// TODO: update bindings instance methods
 /**
  * Bind instance methods for exports.
  */
