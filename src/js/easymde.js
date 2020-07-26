@@ -452,12 +452,13 @@ function toggleCodeBlock(editor) {
         }
     }
 
+    // COMPLETE: there are two \n when editor is empty and you choose "Highlight" - `\n\n`
     function insertFencingAtSelection(cm, cur_start, cur_end, fenceCharsToInsert) {
         var start_line_sel = cur_start.line + 1,
             end_line_sel = cur_end.line + 1,
             sel_multi = cur_start.line !== cur_end.line,
-            repl_start = fenceCharsToInsert + '\n',
-            repl_end = '\n' + fenceCharsToInsert;
+            repl_start = fenceCharsToInsert,
+            repl_end = fenceCharsToInsert;
         if (sel_multi) {
             end_line_sel++;
         }
