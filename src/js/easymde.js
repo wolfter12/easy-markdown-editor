@@ -734,7 +734,31 @@ function toggleHeading3(editor) {
     _toggleHeading(cm, undefined, 3);
 }
 
-// TODO: Add function for toggling heading size 4, 5, 6
+// COMPLETE: Add function for toggling heading size 4, 5, 6
+/**
+ * Action for toggling heading size 4
+ */
+function toggleHeading4(editor) {
+    var cm = editor.codemirror;
+    _toggleHeading(cm, undefined, 4);
+}
+
+/**
+ * Action for toggling heading size 5
+ */
+function toggleHeading5(editor) {
+    var cm = editor.codemirror;
+    _toggleHeading(cm, undefined, 5);
+}
+
+/**
+ * Action for toggling heading size 6
+ */
+function toggleHeading6(editor) {
+    var cm = editor.codemirror;
+    _toggleHeading(cm, undefined, 6);
+}
+
 
 /**
  * Action for toggling ul.
