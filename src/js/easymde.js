@@ -1388,7 +1388,7 @@ function wordCount(data) {
     return count;
 }
 
-// TODO: Add toolbar options: heading-4, heading-5, heading-6
+// COMPLETE: Add toolbar options: heading-4, heading-5, heading-6
 var toolbarBuiltInButtons = {
     'bold': {
         name: 'bold',
@@ -1445,6 +1445,24 @@ var toolbarBuiltInButtons = {
         name: 'heading-3',
         action: toggleHeading3,
         className: 'fa fa-header fa-heading header-3',
+        title: 'Small Heading',
+    },
+    'heading-4': {
+        name: 'heading-4',
+        action: toggleHeading1,
+        className: 'fa fa-header fa-heading header-4',
+        title: 'Big Heading',
+    },
+    'heading-5': {
+        name: 'heading-5',
+        action: toggleHeading5,
+        className: 'fa fa-header fa-heading header-5',
+        title: 'Medium Heading',
+    },
+    'heading-6': {
+        name: 'heading-6',
+        action: toggleHeading6,
+        className: 'fa fa-header fa-heading header-6',
         title: 'Small Heading',
     },
     'separator-1': {
