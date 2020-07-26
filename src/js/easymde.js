@@ -2663,7 +2663,7 @@ EasyMDE.prototype.value = function (val) {
     }
 };
 
-// TODO: Update bindings for new methods
+// COMPLETE: Update bindings for new methods
 /**
  * Bind static methods for exports.
  */
@@ -2676,6 +2676,9 @@ EasyMDE.toggleHeadingBigger = toggleHeadingBigger;
 EasyMDE.toggleHeading1 = toggleHeading1;
 EasyMDE.toggleHeading2 = toggleHeading2;
 EasyMDE.toggleHeading3 = toggleHeading3;
+EasyMDE.toggleHeading4 = toggleHeading4;
+EasyMDE.toggleHeading5 = toggleHeading5;
+EasyMDE.toggleHeading6 = toggleHeading6;
 EasyMDE.toggleCodeBlock = toggleCodeBlock;
 EasyMDE.toggleUnorderedList = toggleUnorderedList;
 EasyMDE.toggleOrderedList = toggleOrderedList;
