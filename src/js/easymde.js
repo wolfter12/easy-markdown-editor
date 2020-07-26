@@ -18,7 +18,7 @@ var marked = require('marked/lib/marked');
 var isMac = /Mac/.test(navigator.platform);
 var anchorToExternalRegex = new RegExp(/(<a.*?https?:\/\/.*?[^a]>)+?/g);
 
-// TODO: Update bindings for your new methods
+// COMPLETE: Update bindings for your new methods
 // Mapping of actions that can be bound to keyboard shortcuts or toolbar buttons
 var bindings = {
     'toggleBold': toggleBold,
@@ -36,6 +36,9 @@ var bindings = {
     'toggleHeading1': toggleHeading1,
     'toggleHeading2': toggleHeading2,
     'toggleHeading3': toggleHeading3,
+    'toggleHeading4': toggleHeading4,
+    'toggleHeading5': toggleHeading5,
+    'toggleHeading6': toggleHeading6,
     'cleanBlock': cleanBlock,
     'drawTable': drawTable,
     'drawHorizontalRule': drawHorizontalRule,
