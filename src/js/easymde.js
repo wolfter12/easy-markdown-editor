@@ -45,7 +45,7 @@ var bindings = {
     'toggleFullScreen': toggleFullScreen,
 };
 
-// TODO: Update shortcuts for your new methods
+// TODO: Update shortcuts for your new methods if you need
 var shortcuts = {
     'toggleBold': 'Cmd-B',
     'toggleItalic': 'Cmd-I',
@@ -198,7 +198,7 @@ function createToolbarButton(options, enableActions, enableTooltips, shortcuts, 
 
     // Prevent errors if there is no class name in custom options
     var classNameParts = [];
-    if(typeof options.className !== 'undefined') {
+    if (typeof options.className !== 'undefined') {
         classNameParts = options.className.split(' ');
     }
 
@@ -399,7 +399,6 @@ function toggleStrikethrough(editor) {
     _toggleBlock(editor, 'strikethrough', '~~');
 }
 
-// TODO: Add your action for toggling highlighted
 
 /**
  * Action for toggling code block.
@@ -407,7 +406,6 @@ function toggleStrikethrough(editor) {
 function toggleCodeBlock(editor) {
     var fenceCharsToInsert = editor.options.blockStyles.code;
 
-    // TODO: Could be a problem when you create your function for "higlighted" text
     function fencing_line(line) {
         /* return true, if this is a ``` or ~~~ line */
         if (typeof line !== 'object') {
@@ -913,7 +911,7 @@ function toggleSideBySide(editor) {
             if (!cm.getOption('fullScreen')) {
                 if (editor.options.sideBySideFullscreen === false) {
                     cm.setOption('sideBySideNoFullscreen', true);
-                    noFullscreenItems.forEach(function(el) {
+                    noFullscreenItems.forEach(function (el) {
                         addNoFullscreenClass(el);
                     });
                 } else {
@@ -1210,7 +1208,7 @@ function _toggleLine(cm, name) {
     cm.focus();
 }
 
-// TODO: add "highlighted" type and rest functionality
+
 function _toggleBlock(editor, type, start_chars, end_chars) {
     if (/editor-preview-active/.test(editor.codemirror.getWrapperElement().lastChild.className))
         return;
@@ -1288,7 +1286,6 @@ function _cleanBlock(cm) {
     var endPoint = cm.getCursor('end');
     var text;
 
-    // TODO: add ` to regexp???
     for (var line = startPoint.line; line <= endPoint.line; line++) {
         text = cm.getLine(line);
         text = text.replace(/^[ ]*([# ]+|\*|-|[> ]+|[0-9]+(.|\)))[ ]*/, '');
@@ -1367,7 +1364,7 @@ function wordCount(data) {
     return count;
 }
 
-// TODO: Add toolbar options: heading-4, heading-5, heading-6, highlighted
+// TODO: Add toolbar options: heading-4, heading-5, heading-6
 var toolbarBuiltInButtons = {
     'bold': {
         name: 'bold',
@@ -1578,7 +1575,6 @@ var timeFormat = {
     },
 };
 
-// TODO: Highlighted
 var blockStyles = {
     'bold': '**',
     'code': '```',
@@ -1821,7 +1817,7 @@ function EasyMDE(options) {
  */
 EasyMDE.prototype.uploadImages = function (files, onSuccess, onError) {
     if (files.length === 0) {
-      return;
+        return;
     }
     var names = [];
     for (var i = 0; i < files.length; i++) {
@@ -1843,7 +1839,7 @@ EasyMDE.prototype.uploadImages = function (files, onSuccess, onError) {
  */
 EasyMDE.prototype.uploadImagesUsingCustomFunction = function (imageUploadFunction, files) {
     if (files.length === 0) {
-      return;
+        return;
     }
     var names = [];
     for (var i = 0; i < files.length; i++) {
@@ -1898,9 +1894,9 @@ EasyMDE.prototype.markdown = function (text) {
             if (hljs) {
                 markedOptions.highlight = function (code, language) {
                     if (language && hljs.getLanguage(language)) {
-                      return hljs.highlight(language, code).value;
+                        return hljs.highlight(language, code).value;
                     } else {
-                    return hljs.highlightAuto(code).value;
+                        return hljs.highlightAuto(code).value;
                     }
                 };
             }
@@ -2161,9 +2157,9 @@ EasyMDE.prototype.openBrowseFileWindow = function (onSuccess, onError) {
     imageInput.click(); //dispatchEvent(new MouseEvent('click'));  // replaced with click() for IE11 compatibility.
     function onChange(event) {
         if (self.options.imageUploadFunction) {
-          self.uploadImagesUsingCustomFunction(self.options.imageUploadFunction, event.target.files);
+            self.uploadImagesUsingCustomFunction(self.options.imageUploadFunction, event.target.files);
         } else {
-          self.uploadImages(event.target.files, onSuccess, onError);
+            self.uploadImages(event.target.files, onSuccess, onError);
         }
         imageInput.removeEventListener('change', onChange);
     }
@@ -2270,7 +2266,7 @@ EasyMDE.prototype.uploadImage = function (file, onSuccess, onError) {
  * @param imageUploadFunction {Function} The custom function to upload the image passed in options
  * @param file {File} The image to upload, as a HTML5 File object (https://developer.mozilla.org/en-US/docs/Web/API/File).
  */
-EasyMDE.prototype.uploadImageUsingCustomFunction = function(imageUploadFunction, file) {
+EasyMDE.prototype.uploadImageUsingCustomFunction = function (imageUploadFunction, file) {
     var self = this;
     function onSuccess(imageUrl) {
         afterImageUploaded(self, imageUrl);
@@ -2312,7 +2308,7 @@ EasyMDE.prototype.setPreviewMaxHeight = function () {
     var wrapperMaxHeight = optionsMaxHeight + paddingTop * 2 + borderTopWidth * 2;
     var previewMaxHeight = wrapperMaxHeight.toString() + 'px';
 
-    preview.style.height =  previewMaxHeight;
+    preview.style.height = previewMaxHeight;
 };
 
 EasyMDE.prototype.createSideBySide = function () {
