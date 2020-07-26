@@ -190,6 +190,19 @@
     content: "3";
 }
 
+/* COMPLETE: add classes for new heading buttons*/
+.editor-toolbar button.heading-4:after {
+    content: "4";
+}
+
+.editor-toolbar button.heading-5:after {
+    content: "5";
+}
+
+.editor-toolbar button.heading-6:after {
+    content: "6";
+}
+
 .editor-toolbar button.heading-bigger:after {
     content: "▲";
 }
@@ -310,6 +323,7 @@
     color: #183691;
 }
 
+/* TODO: Add or change existing classes for header-4, -5, -6*/
 .cm-s-easymde .cm-header-1 {
     font-size: 200%;
     line-height: 200%;
