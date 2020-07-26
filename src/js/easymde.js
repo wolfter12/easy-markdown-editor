@@ -2693,7 +2693,7 @@ EasyMDE.togglePreview = togglePreview;
 EasyMDE.toggleSideBySide = toggleSideBySide;
 EasyMDE.toggleFullScreen = toggleFullScreen;
 
-// TODO: update bindings instance methods
+// COMPLETE: update bindings instance methods
 /**
  * Bind instance methods for exports.
  */
@@ -2723,6 +2723,15 @@ EasyMDE.prototype.toggleHeading2 = function () {
 };
 EasyMDE.prototype.toggleHeading3 = function () {
     toggleHeading3(this);
+};
+EasyMDE.prototype.toggleHeading4 = function () {
+    toggleHeading4(this);
+};
+EasyMDE.prototype.toggleHeading5 = function () {
+    toggleHeading5(this);
+};
+EasyMDE.prototype.toggleHeading6 = function () {
+    toggleHeading6(this);
 };
 EasyMDE.prototype.toggleCodeBlock = function () {
     toggleCodeBlock(this);
