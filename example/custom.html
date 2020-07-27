@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Example / Preview</title>
+  <link rel="stylesheet" href="../dist/easymde.min.css">
+  <script src="../dist/easymde.min.js"></script>
+</head>
+
+<body>
+  <textarea></textarea>
+  <script>
+    var easyMDE = new EasyMDE({
+      // autoDownloadFontAwesome: false,
+      forceSync: true,
+      autosave: {
+        enabled: false
+      },
+      blockStyles: {
+        bold: "**",
+        code: "`",
+        italic: "_",
+      },
+      insertTexts: {
+        horizontalRule: ['', '\n- - -\n']
+      },
+      toolbar: [
+        "bold",
+        "italic",
+        "strikethrough",
+        "|",
+        {
+          name: "headers",
+          className: "fa fa-header fa-heading",
+          title: "Headers",
+          children: [
+            "heading-1",
+            "heading-2",
+            "heading-3",
+            "heading-4",
+            "heading-5",
+            "heading-6"
+          ]
+        },
+        "heading-smaller",
+        "heading-bigger",
+        "|",
+        "quote",
+        {
+          name: "highlight",
+          action: EasyMDE.toggleCodeBlock,
+          className: "fa fa-pencil",
+          title: "Highlight"
+        },
+        "|",
+        "unordered-list",
+        "ordered-list",
+        "horizontal-rule",
+        "|",
+        "link",
+        "image",
+        "|",
+        "undo",
+        "redo",
+        "|",
+        "preview"
+      ],
+      spellChecker: false,
+      status: false,
+    });
+  </script>
+</body>
+
+</html>
