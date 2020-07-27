@@ -1,5 +1,5 @@
 # generated files
-dist/
+# dist/
 
 # NPM files
 node_modules/
@@ -11,4 +11,3 @@ node_modules/
 .idea/
 .vscode/
 dev_test/
-example/index-duolingo.html
