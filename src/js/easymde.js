@@ -48,7 +48,7 @@ var bindings = {
     'toggleFullScreen': toggleFullScreen,
 };
 
-// TODO: Update shortcuts for your new methods if you need
+// COMPLETE: Update shortcuts for your new methods if you need. P.S. No need.
 var shortcuts = {
     'toggleBold': 'Cmd-B',
     'toggleItalic': 'Cmd-I',
@@ -1420,37 +1420,37 @@ var toolbarBuiltInButtons = {
         name: 'heading-1',
         action: toggleHeading1,
         className: 'fa fa-header fa-heading header-1',
-        title: 'Big Heading',
+        title: 'Heading 1',
     },
     'heading-2': {
         name: 'heading-2',
         action: toggleHeading2,
         className: 'fa fa-header fa-heading header-2',
-        title: 'Medium Heading',
+        title: 'Heading 2',
     },
     'heading-3': {
         name: 'heading-3',
         action: toggleHeading3,
         className: 'fa fa-header fa-heading header-3',
-        title: 'Small Heading',
+        title: 'Heading 3',
     },
     'heading-4': {
         name: 'heading-4',
         action: toggleHeading1,
         className: 'fa fa-header fa-heading header-4',
-        title: 'Big Heading',
+        title: 'Heading 4',
     },
     'heading-5': {
         name: 'heading-5',
         action: toggleHeading5,
         className: 'fa fa-header fa-heading header-5',
-        title: 'Medium Heading',
+        title: 'Heading 5',
     },
     'heading-6': {
         name: 'heading-6',
         action: toggleHeading6,
         className: 'fa fa-header fa-heading header-6',
-        title: 'Small Heading',
+        title: 'Heading 6',
     },
     'separator-1': {
         name: 'separator-1',
