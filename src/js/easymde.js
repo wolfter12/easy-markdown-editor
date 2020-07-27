@@ -1436,7 +1436,7 @@ var toolbarBuiltInButtons = {
     },
     'heading-4': {
         name: 'heading-4',
-        action: toggleHeading1,
+        action: toggleHeading4,
         className: 'fa fa-header fa-heading header-4',
         title: 'Heading 4',
     },
