@@ -150,6 +150,7 @@ function createToolbarDropdown(options, enableTooltips, shortcuts, parent) {
     el.className += ' easymde-dropdown';
     var content = document.createElement('div');
     content.className = 'easymde-dropdown-content';
+    var dropdownMenu = { container: null, elements: {} };
     for (var childrenIndex = 0; childrenIndex < options.children.length; childrenIndex++) {
 
         var child = options.children[childrenIndex];
@@ -157,14 +158,17 @@ function createToolbarDropdown(options, enableTooltips, shortcuts, parent) {
 
         if (typeof child === 'string' && child in toolbarBuiltInButtons) {
             childElement = createToolbarButton(toolbarBuiltInButtons[child], true, enableTooltips, shortcuts, 'button', parent);
+            dropdownMenu.elements[child] = childElement;
         } else {
             childElement = createToolbarButton(child, true, enableTooltips, shortcuts, 'button', parent);
+            dropdownMenu.elements[child.name] = childElement;
         }
 
         content.appendChild(childElement);
     }
     el.appendChild(content);
-    return el;
+    dropdownMenu.container = el;
+    return dropdownMenu;
 }
 
 /**
@@ -2454,7 +2458,11 @@ EasyMDE.prototype.createToolbar = function (items) {
             if (item === '|') {
                 el = createSep();
             } else if (item.children) {
-                el = createToolbarDropdown(item, self.options.toolbarTips, self.options.shortcuts, self);
+                var dropdownMenu = createToolbarDropdown(item, self.options.toolbarTips, self.options.shortcuts, self);
+                el = dropdownMenu.container;
+                for (var key in dropdownMenu.elements) {
+                    toolbarData[key] = dropdownMenu.elements[key];
+                }
             } else {
                 el = createToolbarButton(item, true, self.options.toolbarTips, self.options.shortcuts, 'button', self);
             }
